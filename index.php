@@ -9,16 +9,17 @@
 
 <?php
 
-function moneyList($money, $typeList = 'ul'){
+function moneyList($money, $typeList = 'ul')
+{
     $list = '';
     foreach ($money as $currency) {
-        $list .= "<div><$typeList><li>$currency</li><$typeList></div>";
+        $list .= "<li>$currency</li>";
     }
-    return $list;
+    return ("<$typeList>  $list  </$typeList>");
 }
 
 $money = ['dollar', 'euro', 'hrivna'];
-$typeList='ol';
-echo moneyList($money,'ol');
+$typeList = 'ol';
+echo moneyList($money, 'ol');
 ?>
 </html>
